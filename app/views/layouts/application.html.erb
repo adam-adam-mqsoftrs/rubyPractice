@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Foodlog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <%= render "shared/header" %>
+
+  <% if notice.present? %>
+    <p class="notification is-link is-light" style="color: blue"><%= notice %></p>
+  <% end %>
+
+  <% if alert.present? %>
+    <p class="notification is-danger is-light" style="color: green"><%= alert %></p>
+  <% end %>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+  </body>
+</html>

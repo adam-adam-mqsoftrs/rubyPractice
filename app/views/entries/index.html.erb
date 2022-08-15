@@ -1,0 +1,22 @@
+<%= content_for :title do%>
+  Foodlog &ndash;  <%= DateTime.now.to_formatted_s(:short) %>
+<% end %>
+
+<%# <h1 class="is-size-2 has-text-weight-bold mb-3">Entries</h1> %>
+
+<div id="entries" class="columns mt-6 is-centered">
+  <% @entries.each do |entry| %>
+      <div class="column is-one-quarter">
+        <div class="card">
+          <%= render entry %>
+      <div class="card-footer">
+        <%= link_to "Show this entry", entry, class: "card-footer-item" %>
+        <%# <%= link_to "New entry", new_entry_path,  class: "card-footer-item" %>
+        <%# <%= link_to "Delete this entry", entry, method :delete, data: {confirm: 'Are you sure?'} class: "card-footer-item" %>
+      </div>
+      </div>
+      </div>
+  <% end %>
+</div>
+
+

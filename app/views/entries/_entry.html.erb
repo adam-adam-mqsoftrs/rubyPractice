@@ -1,0 +1,28 @@
+<div id="<%= dom_id entry %>">
+
+  <header class="card-header">
+    <p class="card-header-title">
+    <%= entry.meal_type %></p>
+  </header>
+
+  <div class="card-content">
+  <div class="content">
+    <strong>Calories:</strong>
+    <%= entry.calories %>
+
+    <strong>Proteins:</strong>
+    <%= entry.proteins %>
+
+    <strong>Carbohydrates:</strong>
+    <%= entry.carbohydrates %>
+  
+    <strong>Fats:</strong>
+    <%= entry.fats %>
+
+    <p>Logged:
+    <%= time_ago_in_words(entry.created_at) %>
+    ago</p>
+  
+</div>
+</div>
+</div>
